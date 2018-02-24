@@ -1,1 +1,92 @@
+/*
+Pronic number is a number which is the product of two consecutive intergers, that is, n=x*(x+1).
+Write a program which, for a given input n, detects if the number is pronic or not
+*/
+//n = x*(x+1); Formula for a pronic number where x is any positive interger
+/*
+1*2 ends with 2
+2*3 ends with 6
+3*4 ends with 2
+4*5 ends with 0
+5*6 ends with 0
+6*7 ends with 2
+7*8 ends with 6
+8*9 ends with 2
+9*0 ends with 0
+0*1 ends with 0
+*/
+
+import java.util.*;
+public class PronicNumbers{
+//Main method
+public static void main(String[]args){
+Scanner input = new Scanner(System.in);
+
+//Lets the user enter their number
+System.out.println("Enter an interger: ");
+int numberEntered = input.nextInt();
+
+//Creates a string for the number entered and gets the last character
+String numString = numberEntered + "";
+char lastNum = numString.charAt(numString.length()-1);
+
+//if the last character is 0, 2, or 6 then it could be a pronic number
+if(lastNum == '0' ||lastNum == '2' ||lastNum == '6'){
+Pronic(numberEntered,lastNum);
+}
+//if the last character is not one of those three then it can not be a pronic number
+else{
+System.out.println(numberEntered+" is not a pronic number.");
+}
+
+}
+
+//Pronic Method
+public static void Pronic(int numberEntered, char lastNum){
+
+//Takes the square root of the number
+double numberSqrt = Math.sqrt(numberEntered);
+
+//gets the x for the formula and does the formula
+int x = (int)(Math.floor(numberSqrt));
+int n = x*(x+1);
+
+//if the number is equal to n then it is a pronic number
+if(numberEntered == n){
+System.out.println(numberEntered+" is a pronic number.");
+}
+//if the number is not equal to n then it is not a pronic number
+else{
+System.out.println(numberEntered+" is not a pronic number.");
+}
+}
+
+
+}
+
+
+/*
+1*2 ends with 2
+2*3 ends with 6
+3*4 ends with 2
+4*5 ends with 0
+5*6 ends with 0
+6*7 ends with 2
+7*8 ends with 6
+8*9 ends with 2
+9*0 ends with 0
+0*1 ends with 0
+floor, squareroot thats x
+
+1*1 ends with 1
+2*2 ends with 4
+3*3 ends with 9
+   4*4 ends with 6
+5*5 ends with 5
+   6*6 ends with 6
+7*7 ends with 9
+8*8 ends with 4
+9*9 ends with 1
+   0*0 ends with 0
+*/
 
