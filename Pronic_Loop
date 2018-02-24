@@ -1,0 +1,38 @@
+/*
+Pronic number is a number which is the product of two consecutive intergers, that is, n=x*(x+1).
+Write a program which, for a given input n, detects if the number is pronic or not
+*/
+//n = x*(x+1); Formula for a pronic number where x is any positive interger
+import java.util.*;
+public class PronicNumbers{
+//Main method
+public static void main(String[]args){
+Scanner input = new Scanner(System.in);
+
+//Lets the user enter their number
+System.out.println("Enter an interger: ");
+int numberEntered = input.nextInt();
+
+//Declares the variables
+int n;
+int y=1;
+
+//Loop to check if its a pronic number
+for(int x=0;x<(numberEntered);x++){
+n=x*(x+1);
+
+//If it is a pronic number output statement
+if(numberEntered==n){
+System.out.println(numberEntered+" is a pronic number.");
+y=0;
+break;
+}
+
+}
+
+//If its not a pronic number output statement
+if(y!=0){
+System.out.println(numberEntered+" is not a pronic number.");
+}
+
+}}
