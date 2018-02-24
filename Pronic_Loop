@@ -18,7 +18,7 @@ int n;
 int y=1;
 
 //Loop to check if its a pronic number
-for(int x=0;x<(numberEntered);x++){
+for(int x=0;x<=(numberEntered);x++){
 n=x*(x+1);
 
 //If it is a pronic number output statement
